@@ -1,16 +1,21 @@
 services:
-  # A Docker web service
+# A Service From Doodh Factory 
   - type: web
-    name: Ngrok
+    name: txt4
+    plan: free
     env: docker
-    repo: https://github.com/craxid/rairu-kun # optional
-    region: Singapore # optional (defaults to Singapore)
-    plan: free # optional (defaults to starter)
-    healthCheckPath: /
+    dockerfilePath: Dockerfile
+    repo: https://github.com/RaviAreCool/txt4
+    branch: main
+    autoDeploy: false
     envVars:
-      - key: PORT # ngrok port
-        value: 22
-      - key: NGROK_TOKEN # ngrok token
+      - key: BOT_TOKEN
         sync: false
-      - key: REGION # ngrok region
+      - key: API_ID
         sync: false
+      - key: API_HASH
+        sync: false
+      - key: WEBHOOK
+        sync: false
+      - key: PORT
+        sync: false  # Default port value, update if needed
